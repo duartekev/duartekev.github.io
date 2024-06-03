@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculo Diferencial</title>
+    <link rel="stylesheet" href="calculo.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1><img src="logocetisacolor.jpg" alt="logocetis" id="cetis"> Proyecto Transversal CETis 156</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="proyecto.html">Inicio</a></li>
+                <li><a href="#">Categorias</a>
+                    <ul>
+                        <li><a href="ecologia.html">Ecologia</a></li>
+                        <li><a href="fisica.html">Fisica</a></li>
+                        <li><a href="programacion.html">Programacion</a></li>
+                        <li><a href="ingles.html">Ingles</a></li>
+                        <li><a href="calculo.html">Calculo</a></li>
+                    </ul>
+                </li>
+                <li> <a href="miembros.html">Miembros</a> </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <div class="container">
+            <h2>Tipos de Energía</h2>
+            <canvas id="energyChart"></canvas>
+        </div>
+    
+        <script>
+            const ctx = document.getElementById('energyChart').getContext('2d');
+            const energyChart = new Chart(ctx, {
+                type: 'bar',
+                data: {
+                    labels: ['Solar', 'Eólica', 'Hidráulica', 'Biomasa', 'Geotérmica', 'Nuclear', 'Petróleo', 'Gas Natural', 'Carbón'],
+                    datasets: [{
+                        label: 'Costo de Producción (USD/MWh)',
+                        data: [30, 50, 40, 60, 70, 100, 80, 90, 110],
+                        backgroundColor: [
+                            'rgba(255, 99, 132, 0.2)',
+                            'rgba(54, 162, 235, 0.2)',
+                            'rgba(75, 192, 192, 0.2)',
+                            'rgba(153, 102, 255, 0.2)',
+                            'rgba(255, 159, 64, 0.2)',
+                            'rgba(255, 206, 86, 0.2)',
+                            'rgba(231, 76, 60, 0.2)',
+                            'rgba(46, 204, 113, 0.2)',
+                            'rgba(52, 152, 219, 0.2)'
+                        ],
+                        borderColor: [
+                            'rgba(255, 99, 132, 1)',
+                            'rgba(54, 162, 235, 1)',
+                            'rgba(75, 192, 192, 1)',
+                            'rgba(153, 102, 255, 1)',
+                            'rgba(255, 159, 64, 1)',
+                            'rgba(255, 206, 86, 1)',
+                            'rgba(231, 76, 60, 1)',
+                            'rgba(46, 204, 113, 1)',
+                            'rgba(52, 152, 219, 1)'
+                        ],
+                        borderWidth: 1
+                    }]
+                },
+                options: {
+                    scales: {
+                        y: {
+                            beginAtZero: true
+                        }
+                    }
+                }
+            });
+        </script>
+    </article>
+</body>
+</html>

@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="proyecto.css">
+    <script>
+        async function fetchWeather() {
+    const apiKey = '8791da1caa6833d4c9ff7c35cbc40e2b';
+    const city = 'Tijuana';
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric&lang=es`;
+
+    try {
+        const response = await fetch(url);
+        const data = await response.json();
+
+        document.getElementById('weather').innerHTML = `
+            <div class="weather-info"><strong>Temperatura:</strong> ${data.main.temp} °C</div>
+            <div class="weather-info"><strong>Condiciones:</strong> ${data.weather[0].description}</div>
+            <div class="weather-info"><strong>Humedad:</strong> ${data.main.humidity} %</div>
+            <div class="weather-info"><strong>Viento:</strong> ${data.wind.speed} m/s</div>
+        `;
+    } catch (error) {
+        console.error('Error fetching weather data:', error);
+    }
+}
+
+fetchWeather();
+
+function comprobar(){
+    event.preventDefault();
+var nombre = document.getElementById("nombre").value
+var email = document.getElementById("email").value
+var mensaje = document.getElementById("mensaje").value
+if(nombre == "" || email == "" || mensaje == ""){
+alert("Por favor, complete todos los campos.");
+} else {
+alert("¡Gracias por enviar tus comentarios!");
+}
+}
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1><img src="logocetisacolor.jpg" alt="logocetis" id="cetis"> Proyecto Transversal CETis 156</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="proyecto.html">Inicio</a></li>
+                <li><a href="#">Categorias</a>
+                    <ul>
+                        <li><a href="ecologia.html">Ecologia</a></li>
+                        <li><a href="fisica.html">Fisica</a></li>
+                        <li><a href="programacion.html">Programacion</a></li>
+                        <li><a href="ingles.html">Ingles</a></li>
+                        <li><a href="calculo.html">Calculo</a></li>
+                    </ul>
+                </li>
+                <li> <a href="miembros.html">Miembros</a> </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <div class="texto">
+            <h1 id="titulo2">Bienvenido/a al Proyecto Transversal CETis 156</h1>
+            <p>Este proyecto tiene como objetivo fomentar el trabajo en equipo y la colaboración entre los alumnos de diferentes especialidades del CETis 156. Aquí podrás encontrar información sobre distintas categorías como ecología, física, programación e inglés.</p>
+        </div>
+<div class="contenedor">
+    <h2>Clima en Tijuana (openweathermap.com):</h2>
+    <div id="weather-info"></div>
+    <div id="weather"></div>
+</div>
+    </article>
+    <aside> 
+<form onsubmit="comprobar()">
+    <h2>Te gustaria enviar un mensaje al desarollador?</h2>
+    <label for="name">Nombre:</label>
+    <input type="text" id="nombre" name="nombre">
+    <br>
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email">
+    <br>
+    <label for="message">Mensaje:</label>
+        <textarea id="mensaje" name="comentario" cols="50" rows="3"></textarea>
+    <br>
+    <input type="submit" value="Enviar">
+</form>
+    </aside>
+</body>
+
+
+</html>
+
+</body>
+
+</html>

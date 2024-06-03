@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miembros</title>
+    <link rel="stylesheet" href="miembros.css">
+</head>
+<body>
+    <header>
+        <h1><img src="logocetisacolor.jpg" alt="logocetis" id="cetis"> Proyecto Transversal CETis 156</h1>
+        <nav>
+            <ul class="menu">
+                <li><a href="proyecto.html">Inicio</a></li>
+                <li><a href="#">Categorias</a>
+                    <ul>
+                        <li><a href="ecologia.html">Ecologia</a></li>
+                        <li><a href="fisica.html">Fisica</a></li>
+                        <li><a href="programacion.html">Programacion</a></li>
+                        <li><a href="ingles.html">Ingles</a></li>
+                        <li><a href="calculo.html">Calculo</a></li>
+                    </ul>
+                </li>
+                <li> <a href="miembros.html">Miembros</a> </ul>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <article>
+        <div class="contenedor">
+            <h2>Miembros del Equipo:</h2>
+    <div class="slider-container">
+        <div class="slider">
+            <p><img src="perfil1.jpeg" alt="Imagen 1">alumno<br>dato1 <br>dato2</p>
+            <p><img src="perfil2.jpeg" alt="Imagen 2">alumno<br>dato1 <br>dato2</p>
+            <p><img src="perfil3.jpeg" alt="Imagen 3">alumno<br>dato1 <br>dato2</p>
+            <p><img src="perfil4.JPG" alt="Imagen 4">alumno<br>dato1 <br>dato2</p>
+        </div>
+    </div>
+</div>
+    </article>
+    <script>
+        const slider = document.querySelector('.slider');
+const slides = document.querySelectorAll('.slider img');
+
+let currentIndex = 0;
+const slideWidth = slides[0].clientWidth;
+
+function nextSlide() {
+    if (currentIndex >= slides.length - 1) {
+        currentIndex = 0;
+    } else {
+        currentIndex++;
+    }
+    updateSlide();
+}
+
+function updateSlide() {
+    slider.style.transform = `translateX(${-currentIndex * slideWidth}px)`;
+}
+
+setInterval(nextSlide,3000);
+    </script>
+</body>
+</html>

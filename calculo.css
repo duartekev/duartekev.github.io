@@ -1,0 +1,116 @@
+.container {
+    width: 80%;
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h2 {
+        text-align: center;
+        color: #333;
+    }
+
+#cetis {
+    height: 80px;
+    width: 80px;
+}
+
+#titulo2 {
+    color: black;
+    font-weight: bold;
+}
+
+.usuario {
+    height: 30px;
+    width: 30px;
+    margin-left: 15px;
+    margin-top: 5px;
+}
+
+h1 {
+    text-align: center;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: azure;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0%;
+}
+
+nav ul>li:hover {
+    background-color: rgb(99, 99, 99);
+    color: #000;
+    transition: .4s;
+    border-radius: 15px;
+}
+
+nav li {
+    line-height: 3rem;
+    position: relative;
+    text-align: center;
+}
+
+.menu ul {
+    position: absolute;
+}
+
+nav a {
+    color: #ddd;
+    display: flex;
+    padding: 0 2.4em;
+    text-decoration: none;
+    transition: .4s;
+}
+
+nav a:hover {
+    background: rgb(144, 255, 218);
+    color: black;
+}
+
+
+/*LV1*/
+
+.menu {
+    background: rgb(40, 116, 90);
+    display: flex;
+    border-radius: 15px;
+    width: 100%;
+}
+
+.menu>li {
+    float: left;
+}
+
+
+/* 2do Nivel */
+
+nav li li {
+    background: rgb(60, 216, 164);
+    max-height: 0;
+    overflow: hidden;
+    transition: all .6s;
+    width: 200px;
+}
+
+nav li:hover>ul>li {
+    max-height: 1000px;
+    overflow: visible;
+}
+
+.menu>li>ul {
+    top: 100%;
+}
+
+
+/* 3er Nivel */
+
+.menu ul ul {
+    left: 100%;
+    top: 0;
+}
