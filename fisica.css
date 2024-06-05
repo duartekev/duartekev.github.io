@@ -108,3 +108,6 @@ nav li:hover>ul>li {
     left: 100%;
     top: 0;
 }
+h3 {
+    text-align: center;
+}
